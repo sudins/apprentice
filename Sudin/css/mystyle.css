@@ -1,0 +1,49 @@
+
+.wrapper{
+	width: 800px;
+	margin-left: 25em;
+	background-color: silver;
+}
+
+.module{
+	position: relative;
+	float: left;
+	margin: 0px 1px;
+}
+.item-info span{
+	float: right;
+	display: inline;
+}
+.item-info {
+	display: inline;
+	margin:50px;
+	margin-left: 2em;
+}
+.item-info h4{
+	display: inline;
+	margin-left: 2em;
+}
+.header{
+ color: green;
+ text-align: right;
+}
+.item-image{
+	width: 970px;
+	height: 850px;
+	position: relative;
+}
+.star{
+	position: relative;
+	margin-left: 22em;
+	right: 0px;
+}
+.star table
+{
+	position: relative;
+}
+.header{
+	align-items: center;
+	align-content: right;
+	align-self: right;
+
+}
