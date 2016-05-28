@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Sasto Bazaar</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	<link rel="stylesheet" type="text/css" href="css/layout/footer.css">
+	<link rel="stylesheet" type="text/css" href="css/layout/header.css">
+	<link rel="stylesheet" type="text/css" href="css/layout/body.css">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" type="text/css" href="css/base/base.css">
+	<link href='https://fonts.googleapis.com/css?family=Lato:700italic' rel='stylesheet' type='text/css'>
+
+	<script type="text/javascript" src="js/Chart.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
+</head>
+<body>
+		
+
+<!-- This is the header column -->
+			<div>
+   				<div class="panel panel-default ">
+			  		<div class="panel-heading">
+		  				<div class="container">
+        					<div class="row">
+				  				<a href="index.html"><img src="images/sblogo.png" alt="sasto bazaar " height="55" ></a>
+				  			</div>
+						</div>
+					</div>
+				</div>
+			</div>
+<!-- This is the main body core -->			
+			
+			<div class="container">	
+				<div class="row">
+      					<div class="page-header">
+        					<div class="text-center"><h1>Welcome to Admin Dashboard</h1></div>
+      					</div>
+      				
+      					<div class="row">
+  						<div class="container">
+
+  							<div class="col-sm-12 col-xs-12 col-lg-12 col-md-12">	
+  								
+  								<div class="well">
+  									<h4> 
+  									<span class="glyphicon glyphicon-user">Welcome Admin</span>  
+  										<span class=" pull-right">
+  											<a href="aboutus.html" class="btn btn-danger">Logout <span class="glyphicon glyphicon-user"></span>
+  											</a>
+  										</span>
+  									</h4>
+   								</div>
+
+
+  								<div class="well">
+  										<ul class="nav nav-pills nav-justified">
+  										<li class="active"><a href="#">Statistics</a></li>
+  										<li><a href="#"> Data Entry Page </a></li>
+  										</ul>
+  										<canvas id="newcanvas" height="300" width="300">
+	
+										</canvas>
+										       <script>
+										        $(document).ready(function(){
+										          var ctx 
+										          = $("#newcanvas").get(0).getContext("2d");
+										         //pie chart data
+										         //sum of value=360
+										         var data = {
+										           datasets: [{
+										               data: [
+										                   8,
+										                   7,
+										                   6
+										               ],
+
+										               backgroundColor: [
+										                   "#FF6384",
+										                   "#4BC0C0",
+										                   "#FFCE56"
+										                   
+										               ],
+										               label: 'My dataset' // for legend
+										           }],
+										           labels: [
+										               "Hasna Mobile Shop",
+										               "Nelson Mobile Shop",
+										               "Prapti Mobile Shop"
+										           ]
+										       };
+
+										        var myPieChart = new Chart(ctx,{
+										          type: 'pie',
+										          data: data,
+										          options: {
+
+										          	 maintainAspectRatio: false,
+										          } 
+										         });
+										        });
+										       </script>
+											
+										
+  								</div>
+
+  							</div>
+  						</div>
+  						</div>
+  				</div>
+      		</div>
+							
+				
+
+
+<!-- This is the final footer column -->	
+			<footer class="footer1">
+    	 	 	<div class="container">
+        			<div class="row">
+						<div class="col-xs-12 col-md-12 col-sm-12 col-lg-12">
+							
+								  		<span class="copy">Copyright &copy; 2016 and All rights reserved
+								  		</span>
+								  		
+											
+										<div class="pull-right">
+									  		  <a href="aboutus.html" target="_blank">About us </a> / 
+													<a href="#">Licenses</a> / 
+													<a href="#">Terms &amp; Conditions</a> / 
+													<a href="#">Privacy Policy</a>
+										</div>							   
+							
+						</div>		
+					</div>
+				</div>
+			</footer>
+
+		
+</body>
+</html>
+
+<!-- W3C CONSORTIUM VERIFIED -->

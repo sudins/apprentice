@@ -1,0 +1,32 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  margin-bottom: 60px;
+}
+.footer1 {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 30px;
+ 
+}
+
+
+.footer1{
+	padding-top: 5px;
+	background-color: #247BA0;
+}
+.pull-right a{
+	color: white;
+	margin-top: 5px;
+  font-family: 'Lato', sans-serif;
+
+}
+.copy{
+	color: white;
+  font-family: 'Lato', sans-serif;
+
+}

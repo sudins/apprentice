@@ -1,0 +1,15 @@
+.form-control{
+background-color: rgb(238, 238, 238);
+}
+
+.well{
+    background-color: rgba(81, 101, 198, 0.19);
+    min-height: 350px;
+   
+}
+td{
+	font-size: 17px;
+}
+.search{
+	background-color: #e3e9e3;
+}
