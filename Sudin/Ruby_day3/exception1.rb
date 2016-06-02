@@ -1,20 +1,48 @@
-class A
-	def initaialize
-	end
 
-	def divison(a,b)
-	result = (a/b)
-	puts result
-		at_exit do
-				if result == 0
-					puts "exiting exception by 0"
-				end
+require 'rspec'
+
+class ZeroDivision
+
+	def initialize(num1,num2)
+		@num1 = num1
+		@num2 = num2
+	end
+	
+	def division
+		begin
+			result = @num1/@num2
+		rescue
+			if @num2 == 0
+				puts "error made by zero"	
+			end
 		end
-		raise "error"
+
 	end
 end
-obj= A.new
-obj.divison(0,1)
+obj = ZeroDivision.new(4,4)
+obj.divison
 
+describe "zerodivision error" do
+	context 'true case'do
+	it "should give no ZeroDivision error"do
 
+	expect(ZeroDivision.new(3,3).divison).to eq(1)
 
+end
+it "should give no ZeroDivision error"do
+expect(ZeroDivision.new(4,4).divison).to eq(1)
+end
+
+end
+
+context 'false case'do
+it "should give  ZeroDivision error"do
+expect(ZeroDivision.new(3,0).divison).to eq("NA")
+end
+it "should give ZeroDivision error"do
+expect(ZeroDivision.new(3,0).divison).to eq("NA")
+end
+
+end
+
+end
