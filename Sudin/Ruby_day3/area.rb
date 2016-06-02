@@ -18,6 +18,7 @@ class Shape
 		@b = b
 		@r = r
 	end
+	
 end
 class Area  < Shape
 	def calc
