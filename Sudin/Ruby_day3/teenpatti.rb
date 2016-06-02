@@ -1,91 +1,37 @@
- 
-require 'rspec'
-
-class DiamondDistributor
-	def initialize(diamonds)
-		@diamonds = diamonds
+class Card
+	def initialize(n)
+		@players_number = n
 	end
+	def carddeck
+		spade=[1,2,3,4,5,6,7,8,9,10,11,12,13]
+		club=[1,2,3,4,5,6,7,8,9,10,11,12,13]
+		heart=[1,2,3,4,5,6,7,8,9,10,11,12,13]
+		diamond=[1,2,3,4,5,6,7,8,9,10,11,12,13]
+		cards=[spade,club,heart,diamond]
 
-	def distributable?
-		if sum  % 3 == 0
-			return true
-		else
-			return false
-		end
-	end
-
-	private
-
-	def sum
-		sum = 0
-		for item in @diamonds
-			sum = sum + item
-		end
-		sum
-	end
-
-	def distribute
-
-		@original_diamonds = @diamonds.dup
-		@sack = []
-		@original_diamonds.each_with_index do |item1, index1|
-			@original_diamonds.each.with_index() do |item2, index2|
-				puts @diamonds.count
-				puts item1
-				puts '*'*20
-				if item1 == sum/3
-					@sack << [item1]
-					@diamonds.delete_at(index1)
-				elsif (item1 + item2) == sum/3
-					@sack << [item1, item2]
-					@diamonds.delete_at(index1)
-					if index1 > index2
-						@diamonds.delete_at(index2)
-					else
-						@diamonds.delete_at(index2 - 1)
-					end
-				end
-			end
-		end
-
-		@sack.map{|x|x.sort}.uniq
-	end
-
-
-	def sum
-		@sum = @original_diamonds.inject(0) { |item, sum| sum += item }
-	end
-
-end
-
-end
-
-
-describe DiamondDistributor do
-	context 'true cases'do
-	describe '#distributable?'do
-	it "should return true for [1,2,3,4,5]" do
-		expect(DiamondDistributor.new([1,2,3,4,5]).distributable?).to eq(true)
-	end
-	it "should return true for [1,2,3,4,5,6,7,8]" do
-		expect(DiamondDistributor.new([1,2,3,4,5,6,7,8]).distributable?).to eq(true)
-	end
+		players=Array.new(@players_number,[])
+			
+			(0..@players_number).each_with_index do |item,index|
+			card_type = cards.sample
+			the_card = card_type.sample
+				card_type.delete(the_card)
+			player[index] << the_card		
 	
-
-end
-
-end
-context 'false cases' do
-	describe'#distributable?'do
-	it "should return false for [1,2,3,4]" do
-		expect(DiamondDistributor.new([1,2,3]).distributable?).to eq(false)
+			(0..@players_number).each_with_index do |item,index|
+			card_type = cards.sample
+			the_card = card_type.sample
+				card_type.delete(the_card)
+			player[index] << the_card		
+		
+			(0..@players_number).each_with_index do |item,index|
+			card_type = cards.sample
+			the_card = card_type.sample
+				card_type.delete(the_card)
+			player[index] << the_card		
+		
+		end
 	end
-
-	it "should return false for [1,2,3,4,5,6,7]" do
-		expect(DiamondDistributor.new([1,2,3,4,5,6,7]).distributable?).to eq(false)
-	end
-end
 end
 
-end
-
+obj = Card.new(3)
+obj.carddeck
