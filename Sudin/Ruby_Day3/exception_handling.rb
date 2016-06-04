@@ -2,7 +2,7 @@ require 'rspec'
 
 describe "ZeroDivision error" do
 	context 'true case'do
-		it "should give no ZeroDivision error"do
+		it "should  no ZeroDivision error"do
 			expect(ZeroDivision.new(3,3).divison).to eq(1)
 		end
 		it "should give no ZeroDivision error"do

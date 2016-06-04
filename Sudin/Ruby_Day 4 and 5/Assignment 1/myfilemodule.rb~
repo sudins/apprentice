@@ -1,0 +1,31 @@
+
+module MyFileModule
+  def create_file
+    puts "Hello Hello !"
+    f = File.open("untitled.txt","r+")
+			f.each_line do |line|
+			puts line
+			end
+			f.close
+  end
+
+  def edit_file
+  	file = File.open("untitled.txt", "w+")
+	file.puts("What you write here gets overrided here, think  So corectly think and write")
+	file.close
+  end
+
+  def delete_file
+  	file = File.delete("untitled.txt")
+  	file.close
+  end
+end
+
+class Open
+  include MyFileModule
+end
+
+obj1 = Open.new
+obj1.create_file
+obj1.edit_file
+#obj1.delete_file  "this line deletes the file hence not in dcoded form"
